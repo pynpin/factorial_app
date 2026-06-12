@@ -1,0 +1,107 @@
+<MainScreen>:
+    orientation: "vertical"
+    padding: dp(20)
+    spacing: dp(10)
+
+    Label:
+        text: "FACTORIAL PREMIUM"
+        font_size: "22sp"
+        font_name: "DejaVuSansBold.ttf"
+        size_hint_y: None
+        height: dp(40)
+
+    TextInput:
+        id: input_val
+        hint_text: "Enter a number for n"
+        font_name: "DejaVuSansBold.ttf"
+        multiline: False
+        size_hint_y: None
+        height: dp(30)
+        
+    TextInput:
+        id: input_val2
+        hint_text: "Enter a number for x"
+        font_name: "DejaVuSansBold.ttf"
+        multiline: False
+        size_hint_y: None
+        height: dp(30)
+
+    GridLayout:
+        cols: 2
+        spacing: dp(10)
+        size_hint: 1, None
+        height: dp(400)
+
+        Button:
+            text: "Factorial [n!]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Factorial", input_val.text)
+
+        Button:
+            text: "Double Factorial [n!!]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Double", input_val.text)
+
+        Button:
+            text: "Subfactorial [!n]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Sub", input_val.text) 
+                                    
+        Button:
+            text: "Multifactorial [n!ₓ]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate_type("Multi", input_val.text, input_val2.text)
+
+        Button:
+            text: "Primorial 1 [n#]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Primorial1", input_val.text)
+            
+        Button:
+            text: "Primorial 2 [pₙ#]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Primorial2", input_val.text)
+
+        Button:
+            text: "Super Factorial [sf(n)]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Super", input_val.text)
+
+        Button:
+            text: "Hyper Factorial [H(n)]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Hyper", input_val.text)
+            
+        Button:
+            text: "Falling Factorial [(n)ₓ]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate_type("Falling", input_val.text, input_val2.text)
+            
+        Button:
+            text: "Rising Factorial [n⁽ˣ⁾]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate_type("Rising", input_val.text, input_val2.text)
+            
+        Button:
+            text: "Exponential Factorial [n$]"
+            font_size: "13sp"
+            font_name: "DejaVuSansBold.ttf"
+            on_release: root.calculate("Expo", input_val.text)
+
+    Label:
+        text: root.result
+        font_size: "18sp"
+        font_name: "DejaVuSans.ttf"
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
