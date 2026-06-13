@@ -40,6 +40,8 @@ jobs:
 
       - name: Build APK
         run: |
+          export JAVA_HOME=$JAVA_HOME_17_X64
+          export PATH=$JAVA_HOME/bin:$PATH
           buildozer android debug
         env:
           ANDROID_HOME: /home/runner/.buildozer/android/platform/android-sdk
